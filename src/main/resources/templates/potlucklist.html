@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>List of Entries</title>
+</head>
+<body>
+<form th:action="@{/potlucklist}" th:object="${potluck}" method="get">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Food</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="potluck : ${potluck}">
+            <p th:text="${potluck.name}"></p>
+            <p th:text="${potluck.food}"></p>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Potluck Signup</title>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Potluck Dinner Signup...You better sign up</h1>
+        <p></p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button"></a></p>
+    </div>
+     <form th:action="@{/potluckentry}" th:object="${potluck}" method="post">
+         <div class="form-group">
+             <label for="name">Name</label>
+             <input type="text" th:field="*{name}" id="name" placeholder="Name"/>
+         </div>
+         <div class="form-group">
+             <label for="food">Food</label>
+             <input type="text" th:field="*{food}" id="food" placeholder="Food"/>
+         </div>
+         <button type="submit" class="btn btn-default">Submit</button>
+     </form>
+</div>
+</body>
+</html>
